@@ -1,15 +1,19 @@
 import { useState } from 'react'
-import navbar from "/navbar"
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Navbar from "./navbar"
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [count, setPage] = useState("home")
 
   return (
     <>
-    <navbar setPage={setPage}/>
+    <Navbar setPage={setPage}/>
+
+    {page === "home" && <h1>Home</h1>}
+    {page === "posts" && <h1>Posts</h1>}
+    {page === "gallery" && <h1>Gallery</h1>}
+    {page === "about" && <h1>About</h1>}
     </>
   )
 }
