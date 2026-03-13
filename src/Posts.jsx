@@ -1,19 +1,20 @@
-import { title } from "node:process";
+import posts from './js/posts.js'
+import './App.css'
 
-export const posts = [
-  {
-    id: 1,
-    title: "My First Favorite Pokémon",
-    text: "It Was at first bulbasaure"
-  },
-  {
-    id: 2,
-    title: "Then My Favorite Pokémon Changed",
-    text: "When i saw Snorlax i felt the connection hehe"
-  },
-  {
-    id: 3,
-    title: "Now Im Trying To CATCH them ALL",
-    text: "Im on a journey to catch them all to expand my pokémon family"
-  }
-]
+function Posts() {
+  return (
+    <div className='posts'>
+      <h1>Min Pokémon Blog</h1>
+
+      {posts.map((post) => (
+        <div key={post.id}>
+        <h2>{post.title}</h2>
+        <p>{post.text}</p>
+        </div>
+            
+      ))}
+    </div>
+  )
+}
+
+export default Posts

@@ -1,3 +1,4 @@
+
 function Navbar({setPage}) {
   return (
     <nav className="navbar">

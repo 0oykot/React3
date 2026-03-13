@@ -1,19 +1,23 @@
 import { useState } from 'react'
-import Navbar from "./navbar"
+import Navbar from './navbar'
+import Gallery from './Gallery'
+import Posts from './js/posts.js'
+import Home from './Home'
+import Contact from './Contact'
 import './App.css'
 
 function App() {
 
-  const [count, setPage] = useState("home")
+  const [page, setPage] = useState("home")
 
   return (
     <>
     <Navbar setPage={setPage}/>
 
-    {page === "home" && <h1>Home</h1>}
-    {page === "posts" && <h1>Posts</h1>}
-    {page === "gallery" && <h1>Gallery</h1>}
-    {page === "about" && <h1>About</h1>}
+    {page === 'home' && <Home/>}
+    {page === 'posts.js' && <Posts/>}
+    {page === 'gallery' && <Gallery/>}
+    {page === 'contact' && <Contact/>}
     </>
   )
 }
